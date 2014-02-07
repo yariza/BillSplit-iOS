@@ -36,8 +36,6 @@
 
 @interface BillSolver : NSObject
 {
-    NSArray* billValues;
-    
     NSMutableArray* orders;
     
     NSMutableArray* players;
@@ -47,6 +45,7 @@
 @property NSDecimalNumber* tax;
 @property NSDecimalNumber* tip;
 @property NSMutableArray* transactions;
+@property NSArray* billValues;
 
 +(BillSolver*) sharedBillSolver;
 

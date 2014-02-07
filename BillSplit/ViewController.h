@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CollapsableTableViewDelegate.h"
 
-@interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
+@interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, CollapsableTableViewDelegate>
 
 @end

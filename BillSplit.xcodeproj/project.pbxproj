@@ -130,6 +130,7 @@
 				1895E05A189F46C400E7C661 /* BillSplitTests */,
 				1895E034189F46C300E7C661 /* Frameworks */,
 				1895E033189F46C300E7C661 /* Products */,
+				18BBAF6818A56E2600B0F2C4 /* Resources */,
 			);
 			sourceTree = "<group>";
 		};
@@ -208,15 +209,6 @@
 			isa = PBXGroup;
 			children = (
 				18BBAF3D18A30DE000B0F2C4 /* Classes */,
-				18BBAF4818A30DE000B0F2C4 /* CollapsableTableViewFooterViewGrouped.xib */,
-				18BBAF4918A30DE000B0F2C4 /* CollapsableTableViewFooterViewGrouped_iOS7.xib */,
-				18BBAF4A18A30DE000B0F2C4 /* CollapsableTableViewFooterViewPlain.xib */,
-				18BBAF4B18A30DE000B0F2C4 /* CollapsableTableViewFooterViewPlain_iOS7.xib */,
-				18BBAF4C18A30DE000B0F2C4 /* CollapsableTableViewHeaderViewGrouped.xib */,
-				18BBAF4D18A30DE000B0F2C4 /* CollapsableTableViewHeaderViewGrouped_iOS7.xib */,
-				18BBAF4E18A30DE000B0F2C4 /* CollapsableTableViewHeaderViewPlain.xib */,
-				18BBAF4F18A30DE000B0F2C4 /* CollapsableTableViewHeaderViewPlain_iOS7.xib */,
-				18BBAF5018A30DE000B0F2C4 /* plaintableheader.png */,
 			);
 			path = CollapsableTableView;
 			sourceTree = "<group>";
@@ -236,6 +228,31 @@
 				18BBAF4718A30DE000B0F2C4 /* TapDelegate.h */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		18BBAF6718A56E1300B0F2C4 /* CollapsableTableView */ = {
+			isa = PBXGroup;
+			children = (
+				18BBAF4818A30DE000B0F2C4 /* CollapsableTableViewFooterViewGrouped.xib */,
+				18BBAF4918A30DE000B0F2C4 /* CollapsableTableViewFooterViewGrouped_iOS7.xib */,
+				18BBAF4A18A30DE000B0F2C4 /* CollapsableTableViewFooterViewPlain.xib */,
+				18BBAF4B18A30DE000B0F2C4 /* CollapsableTableViewFooterViewPlain_iOS7.xib */,
+				18BBAF4C18A30DE000B0F2C4 /* CollapsableTableViewHeaderViewGrouped.xib */,
+				18BBAF4D18A30DE000B0F2C4 /* CollapsableTableViewHeaderViewGrouped_iOS7.xib */,
+				18BBAF4E18A30DE000B0F2C4 /* CollapsableTableViewHeaderViewPlain.xib */,
+				18BBAF4F18A30DE000B0F2C4 /* CollapsableTableViewHeaderViewPlain_iOS7.xib */,
+				18BBAF5018A30DE000B0F2C4 /* plaintableheader.png */,
+			);
+			name = CollapsableTableView;
+			sourceTree = "<group>";
+		};
+		18BBAF6818A56E2600B0F2C4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				18BBAF6718A56E1300B0F2C4 /* CollapsableTableView */,
+			);
+			name = Resources;
+			path = BillSplit/CollapsableTableView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

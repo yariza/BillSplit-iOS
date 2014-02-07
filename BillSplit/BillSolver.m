@@ -65,7 +65,7 @@
 {
     if (self=[super init]) {
         
-        billValues = [NSArray arrayWithObjects:
+        self.billValues = [NSArray arrayWithObjects:
                         [NSDecimalNumber decimalNumberWithMantissa:100 exponent:-2 isNegative:NO],
                         [NSDecimalNumber decimalNumberWithMantissa:500 exponent:-2 isNegative:NO],
                         [NSDecimalNumber decimalNumberWithMantissa:1000 exponent:-2 isNegative:NO],
@@ -224,8 +224,8 @@
 -(void) sendToHeap
 {
     //construct heap array
-    heap = [NSMutableArray arrayWithCapacity:[billValues count]];
-    for (int billIndex=0; billIndex<[billValues count]; billIndex++) {
+    heap = [NSMutableArray arrayWithCapacity:[self.billValues count]];
+    for (int billIndex=0; billIndex<[self.billValues count]; billIndex++) {
         int total = 0;
         for (Player* p in players) {
             total += [[p.walletInitial objectAtIndex:billIndex] intValue];
@@ -240,8 +240,8 @@
     //construct walletFinal objects for all players
     //construct targets
     for (Player* p in players) {
-        p.walletFinal = [NSMutableArray arrayWithCapacity:[billValues count]];
-        for (NSDecimalNumber* d in billValues) {
+        p.walletFinal = [NSMutableArray arrayWithCapacity:[self.billValues count]];
+        for (NSDecimalNumber* d in self.billValues) {
             [p.walletFinal addObject:@(0)];
         }
         
@@ -255,7 +255,7 @@
     int billIndex = [self largestBillToSatisfyDebt:debt];
     
     while (billIndex != -1) {
-        NSLog(@"Most Debt: %@ at %@; satisfied with %@", receiver, debt, [billValues objectAtIndex:billIndex]);
+        NSLog(@"Most Debt: %@ at %@; satisfied with %@", receiver, debt, [self.billValues objectAtIndex:billIndex]);
         
         NSMutableArray* wallet = receiver.walletFinal;
         [wallet replaceObjectAtIndex:billIndex withObject:@([[wallet objectAtIndex:billIndex] intValue]+1)];
@@ -297,8 +297,8 @@
 {
     int index;
     
-    for (index=(int)[billValues count]-1; index>=0; index--) {
-        NSDecimalNumber* billValue = [billValues objectAtIndex:index];
+    for (index=(int)[self.billValues count]-1; index>=0; index--) {
+        NSDecimalNumber* billValue = [self.billValues objectAtIndex:index];
         int count = [[heap objectAtIndex:index] intValue];
         NSComparisonResult comp = [billValue compare:debt];
         if (count && (comp == NSOrderedAscending || comp == NSOrderedSame)) {
@@ -318,8 +318,8 @@
 {
     self.transactions = [NSMutableArray array];
     
-    for (int billIndex=0; billIndex<[billValues count]; billIndex++) {
-        NSDecimalNumber* bill = [billValues objectAtIndex:billIndex];
+    for (int billIndex=0; billIndex<[self.billValues count]; billIndex++) {
+        NSDecimalNumber* bill = [self.billValues objectAtIndex:billIndex];
         
         //construct debt array for each bill
         int debts[[players count]];
@@ -387,8 +387,8 @@
 {
     //Assumes Array is full of NSNumbers
     NSDecimalNumber* sum = [NSDecimalNumber zero];
-    for (int i=0; i<billValues.count; i++) {
-        NSDecimalNumber* bill = [billValues objectAtIndex:i];
+    for (int i=0; i<self.billValues.count; i++) {
+        NSDecimalNumber* bill = [self.billValues objectAtIndex:i];
         NSDecimalNumber* count = [[NSDecimalNumber alloc] initWithInteger:[[arr objectAtIndex:i] integerValue]];
         NSDecimalNumber* delta = [bill decimalNumberByMultiplyingBy:count];
         sum = [sum decimalNumberByAdding:delta];
