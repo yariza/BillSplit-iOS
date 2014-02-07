@@ -8,12 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Transaction : NSObject
+@interface Transaction : NSObject<NSSecureCoding>
 
 @property NSString* orig;
 @property NSString* dest;
 @property NSDecimalNumber* bill;
-@property int count;
+@property NSNumber* count;
 
 @end
 
@@ -23,6 +23,7 @@
 @property NSMutableArray* walletFinal;
 @property NSArray* walletInitial;
 @property NSDecimalNumber* charge;
+@property NSDecimalNumber* target;
 
 @end
 
@@ -40,12 +41,12 @@
     NSMutableArray* orders;
     
     NSMutableArray* players;
-    NSMutableArray* targets;
     NSMutableArray* heap;
 }
 
 @property NSDecimalNumber* tax;
 @property NSDecimalNumber* tip;
+@property NSMutableArray* transactions;
 
 +(BillSolver*) sharedBillSolver;
 
@@ -54,6 +55,5 @@
 
 -(NSDecimalNumber*) walletTotal:(NSArray*) arr;
 -(void) distribute;
--(NSArray*) transactionsForPlayer:(NSString*) name;
 
 @end

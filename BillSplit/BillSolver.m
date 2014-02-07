@@ -13,13 +13,44 @@
 -(NSString*) description
 {
     return [NSString stringWithFormat:@"%@ %i x $%i => %@",
-            self.orig, self.count, [self.bill intValue], self.dest];
+            self.orig, [self.count intValue], [self.bill intValue], self.dest];
+}
+
++(BOOL) supportsSecureCoding
+{
+    return YES;
+}
+
+-(id) initWithCoder:(NSCoder *)decoder
+{
+    self = [super init];
+    if (!self)
+        return nil;
+    
+    self.orig = [decoder decodeObjectOfClass:[NSString class] forKey:@"orig"];
+    self.dest = [decoder decodeObjectOfClass:[NSString class] forKey:@"dest"];
+    self.bill = [decoder decodeObjectOfClass:[NSDecimalNumber class] forKey:@"bill"];
+    self.count = [decoder decodeObjectOfClass:[NSNumber class] forKey:@"count"];
+    
+    return self;
+}
+
+-(void) encodeWithCoder:(NSCoder *)encoder
+{
+    [encoder encodeObject:self.orig forKey:@"orig"];
+    [encoder encodeObject:self.orig forKey:@"dest"];
+    [encoder encodeObject:self.bill forKey:@"bill"];
+    [encoder encodeObject:self.count forKey:@"count"];
 }
 
 @end
 
 @implementation Player
 
+-(NSString*) description
+{
+    return self.name;
+}
 
 @end
 
@@ -82,21 +113,21 @@
 -(void) distribute
 {
     [self calculateCharge];
-    [self build];
     //do all the messy calculations and output to each player's
     //walletFinal
     [self sendToHeap];
     [self receiveFromHeap];
+    [self makeTransactions];
 }
 
 -(void) calculateCharge
 {
     for(Player* player in players) {
-        if ([player.name isEqualToString:@"Tab"])
-            continue;
         NSDecimalNumber* subtotal = [NSDecimalNumber zero];
         for (Order* order in orders) {
             NSDecimalNumber* price;
+            if ([player.name isEqualToString:@"Tab"])
+                continue;
             if ([player.name isEqualToString:order.owner])
                 price = order.price;
             else if ([order.owner isEqualToString:@"Shared"])
@@ -190,12 +221,6 @@
     
 }
 
--(void) build
-{
-
-
-}
-
 -(void) sendToHeap
 {
     //construct heap array
@@ -214,25 +239,148 @@
 {
     //construct walletFinal objects for all players
     //construct targets
-    targets = [NSMutableArray arrayWithCapacity:[players count]];
     for (Player* p in players) {
         p.walletFinal = [NSMutableArray arrayWithCapacity:[billValues count]];
         for (NSDecimalNumber* d in billValues) {
             [p.walletFinal addObject:@(0)];
         }
         
-        NSDecimalNumber* target = [[self walletTotal:p.walletInitial] decimalNumberBySubtracting:p.charge];
-        [targets addObject:target];
+        NSDecimalNumber* total = [self walletTotal:p.walletInitial];
+        p.target = [total decimalNumberBySubtracting:p.charge];
+        NSLog(@"%@ - wallet Total=%@, target=%@", p.name, total, p.target);
     }
     
+    Player* receiver = [self playerWithMostDebt];
+    NSDecimalNumber* debt = [self debtForPlayer:receiver];
+    int billIndex = [self largestBillToSatisfyDebt:debt];
+    
+    while (billIndex != -1) {
+        NSLog(@"Most Debt: %@ at %@; satisfied with %@", receiver, debt, [billValues objectAtIndex:billIndex]);
+        
+        NSMutableArray* wallet = receiver.walletFinal;
+        [wallet replaceObjectAtIndex:billIndex withObject:@([[wallet objectAtIndex:billIndex] intValue]+1)];
+        //receiver receives a bill
+        
+        [heap replaceObjectAtIndex:billIndex withObject:@([[heap objectAtIndex:billIndex] intValue]-1)];
+        //heap sends a bill
+        
+        receiver = [self playerWithMostDebt];
+        debt = [self debtForPlayer:receiver];
+        billIndex = [self largestBillToSatisfyDebt:debt];
+    }
+    NSLog(@"Leftover debt: %@", debt);
+    
+    //moving leftovers to Tab
+    Player* tab = (Player*)[players objectAtIndex:0];
+    tab.walletFinal = [NSMutableArray arrayWithArray:heap];
+    
+    NSLog(@"Transaction finished!");
+    for (Player* player in players) {
+        NSLog(@"%@: %@", player.name, player.walletFinal);
+    }
+}
+
+-(Player*) playerWithMostDebt
+{
+    Player* max = [players objectAtIndex:1];
+    
+    for (Player* player in players) {
+        if ([player.name isEqualToString:@"Tab"])
+            continue;
+        if ([[self debtForPlayer:max] compare:[self debtForPlayer:player]] == NSOrderedAscending)
+            max = player;
+    }
+    return max;
+}
+
+-(int) largestBillToSatisfyDebt:(NSDecimalNumber*)debt
+{
+    int index;
+    
+    for (index=(int)[billValues count]-1; index>=0; index--) {
+        NSDecimalNumber* billValue = [billValues objectAtIndex:index];
+        int count = [[heap objectAtIndex:index] intValue];
+        NSComparisonResult comp = [billValue compare:debt];
+        if (count && (comp == NSOrderedAscending || comp == NSOrderedSame)) {
+            return index;
+        }
+    }
+    return -1; //not found
+}
+
+-(NSDecimalNumber*) debtForPlayer:(Player*) player
+{
+    NSDecimalNumber* debt = [player.target decimalNumberBySubtracting:[self walletTotal:player.walletFinal]];
+    return debt;
+}
+
+-(void) makeTransactions
+{
+    self.transactions = [NSMutableArray array];
+    
+    for (int billIndex=0; billIndex<[billValues count]; billIndex++) {
+        NSDecimalNumber* bill = [billValues objectAtIndex:billIndex];
+        
+        //construct debt array for each bill
+        int debts[[players count]];
+        for (int pIndex=0; pIndex<[players count]; pIndex++) {
+            Player* player = [players objectAtIndex:pIndex];
+            int delta = [[player.walletFinal objectAtIndex:billIndex] intValue] - [[player.walletInitial objectAtIndex:billIndex] intValue];
+            debts[pIndex] = delta;
+        }
+        
+        int maxIndex = [self maxIndexIn:debts];
+        while (debts[maxIndex] != 0) {
+            int minIndex = [self minIndexIn:debts];
+            int count = MIN(-debts[minIndex], debts[maxIndex]);
+            Player* sender = [players objectAtIndex:minIndex];
+            Player* receiver = [players objectAtIndex:maxIndex];
+            
+            Transaction* trans = [[Transaction alloc] init];
+            trans.orig = sender.name;
+            trans.dest = receiver.name;
+            trans.bill = bill;
+            trans.count = @(count);
+            
+            [self.transactions addObject:trans];
+            NSLog(@"Trans: %@", trans);
+            
+            debts[minIndex] += count;
+            debts[maxIndex] -= count;
+        }
+    }
     
 }
 
-
--(NSArray*) transactionsForPlayer:(NSString*) name
+-(int) maxIndexIn:(int[]) array
 {
-    //return an NSArray of Transactions for name
-    return nil;
+    int max = 0;
+    for (int i=0; i<[players count]; i++) {
+        if (array[max] < array[i]) {
+            max = i;
+        }
+    }
+    return max;
+}
+
+-(int) minIndexIn:(int[]) array
+{
+    int min = 0;
+    for (int i=0; i<[players count]; i++) {
+        if (array[min] > array[i]) {
+            min = i;
+        }
+    }
+    return min;
+}
+
+-(Player*) findPlayerByName:(NSString*)name
+{
+    for (Player* player in players) {
+        if ([player.name isEqualToString:name])
+            return player;
+    }
+    return [players objectAtIndex:0];
 }
 
 -(NSDecimalNumber*) walletTotal:(NSArray*) arr
