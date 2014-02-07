@@ -21,6 +21,23 @@
 		1895E057189F46C400E7C661 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1895E039189F46C300E7C661 /* UIKit.framework */; };
 		1895E05F189F46C400E7C661 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1895E05D189F46C400E7C661 /* InfoPlist.strings */; };
 		1895E061189F46C400E7C661 /* BillSplitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1895E060189F46C400E7C661 /* BillSplitTests.m */; };
+		1895E06B189F475500E7C661 /* MultipeerConnectivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1895E06A189F475500E7C661 /* MultipeerConnectivity.framework */; };
+		18BBAF5118A30DE000B0F2C4 /* CollapsableTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BBAF3F18A30DE000B0F2C4 /* CollapsableTableView.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w"; }; };
+		18BBAF5218A30DE000B0F2C4 /* CollapsableTableViewFooterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BBAF4218A30DE000B0F2C4 /* CollapsableTableViewFooterViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w"; }; };
+		18BBAF5318A30DE000B0F2C4 /* CollapsableTableViewHeaderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BBAF4418A30DE000B0F2C4 /* CollapsableTableViewHeaderViewController.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w"; }; };
+		18BBAF5418A30DE000B0F2C4 /* CollapsableTableViewTapRecognizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BBAF4618A30DE000B0F2C4 /* CollapsableTableViewTapRecognizer.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc -w"; }; };
+		18BBAF5518A30DE000B0F2C4 /* CollapsableTableViewFooterViewGrouped.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18BBAF4818A30DE000B0F2C4 /* CollapsableTableViewFooterViewGrouped.xib */; };
+		18BBAF5618A30DE000B0F2C4 /* CollapsableTableViewFooterViewGrouped_iOS7.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18BBAF4918A30DE000B0F2C4 /* CollapsableTableViewFooterViewGrouped_iOS7.xib */; };
+		18BBAF5718A30DE000B0F2C4 /* CollapsableTableViewFooterViewPlain.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18BBAF4A18A30DE000B0F2C4 /* CollapsableTableViewFooterViewPlain.xib */; };
+		18BBAF5818A30DE000B0F2C4 /* CollapsableTableViewFooterViewPlain_iOS7.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18BBAF4B18A30DE000B0F2C4 /* CollapsableTableViewFooterViewPlain_iOS7.xib */; };
+		18BBAF5918A30DE000B0F2C4 /* CollapsableTableViewHeaderViewGrouped.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18BBAF4C18A30DE000B0F2C4 /* CollapsableTableViewHeaderViewGrouped.xib */; };
+		18BBAF5A18A30DE000B0F2C4 /* CollapsableTableViewHeaderViewGrouped_iOS7.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18BBAF4D18A30DE000B0F2C4 /* CollapsableTableViewHeaderViewGrouped_iOS7.xib */; };
+		18BBAF5B18A30DE000B0F2C4 /* CollapsableTableViewHeaderViewPlain.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18BBAF4E18A30DE000B0F2C4 /* CollapsableTableViewHeaderViewPlain.xib */; };
+		18BBAF5C18A30DE000B0F2C4 /* CollapsableTableViewHeaderViewPlain_iOS7.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18BBAF4F18A30DE000B0F2C4 /* CollapsableTableViewHeaderViewPlain_iOS7.xib */; };
+		18BBAF5D18A30DE000B0F2C4 /* plaintableheader.png in Resources */ = {isa = PBXBuildFile; fileRef = 18BBAF5018A30DE000B0F2C4 /* plaintableheader.png */; };
+		18BBAF6018A3E6EA00B0F2C4 /* BillValueTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BBAF5F18A3E6EA00B0F2C4 /* BillValueTableCell.m */; };
+		18BBAF6318A3FD6100B0F2C4 /* BillSolver.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BBAF6218A3FD6100B0F2C4 /* BillSolver.m */; };
+		18BBAF6618A440E100B0F2C4 /* OrdersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BBAF6518A440E100B0F2C4 /* OrdersViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +70,32 @@
 		1895E05C189F46C400E7C661 /* BillSplitTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BillSplitTests-Info.plist"; sourceTree = "<group>"; };
 		1895E05E189F46C400E7C661 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1895E060189F46C400E7C661 /* BillSplitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BillSplitTests.m; sourceTree = "<group>"; };
+		1895E06A189F475500E7C661 /* MultipeerConnectivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MultipeerConnectivity.framework; path = System/Library/Frameworks/MultipeerConnectivity.framework; sourceTree = SDKROOT; };
+		18BBAF3E18A30DE000B0F2C4 /* CollapsableTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollapsableTableView.h; sourceTree = "<group>"; };
+		18BBAF3F18A30DE000B0F2C4 /* CollapsableTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollapsableTableView.m; sourceTree = "<group>"; };
+		18BBAF4018A30DE000B0F2C4 /* CollapsableTableViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollapsableTableViewDelegate.h; sourceTree = "<group>"; };
+		18BBAF4118A30DE000B0F2C4 /* CollapsableTableViewFooterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollapsableTableViewFooterViewController.h; sourceTree = "<group>"; };
+		18BBAF4218A30DE000B0F2C4 /* CollapsableTableViewFooterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollapsableTableViewFooterViewController.m; sourceTree = "<group>"; };
+		18BBAF4318A30DE000B0F2C4 /* CollapsableTableViewHeaderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollapsableTableViewHeaderViewController.h; sourceTree = "<group>"; };
+		18BBAF4418A30DE000B0F2C4 /* CollapsableTableViewHeaderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollapsableTableViewHeaderViewController.m; sourceTree = "<group>"; };
+		18BBAF4518A30DE000B0F2C4 /* CollapsableTableViewTapRecognizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollapsableTableViewTapRecognizer.h; sourceTree = "<group>"; };
+		18BBAF4618A30DE000B0F2C4 /* CollapsableTableViewTapRecognizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollapsableTableViewTapRecognizer.m; sourceTree = "<group>"; };
+		18BBAF4718A30DE000B0F2C4 /* TapDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapDelegate.h; sourceTree = "<group>"; };
+		18BBAF4818A30DE000B0F2C4 /* CollapsableTableViewFooterViewGrouped.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollapsableTableViewFooterViewGrouped.xib; sourceTree = "<group>"; };
+		18BBAF4918A30DE000B0F2C4 /* CollapsableTableViewFooterViewGrouped_iOS7.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollapsableTableViewFooterViewGrouped_iOS7.xib; sourceTree = "<group>"; };
+		18BBAF4A18A30DE000B0F2C4 /* CollapsableTableViewFooterViewPlain.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollapsableTableViewFooterViewPlain.xib; sourceTree = "<group>"; };
+		18BBAF4B18A30DE000B0F2C4 /* CollapsableTableViewFooterViewPlain_iOS7.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollapsableTableViewFooterViewPlain_iOS7.xib; sourceTree = "<group>"; };
+		18BBAF4C18A30DE000B0F2C4 /* CollapsableTableViewHeaderViewGrouped.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollapsableTableViewHeaderViewGrouped.xib; sourceTree = "<group>"; };
+		18BBAF4D18A30DE000B0F2C4 /* CollapsableTableViewHeaderViewGrouped_iOS7.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollapsableTableViewHeaderViewGrouped_iOS7.xib; sourceTree = "<group>"; };
+		18BBAF4E18A30DE000B0F2C4 /* CollapsableTableViewHeaderViewPlain.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollapsableTableViewHeaderViewPlain.xib; sourceTree = "<group>"; };
+		18BBAF4F18A30DE000B0F2C4 /* CollapsableTableViewHeaderViewPlain_iOS7.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CollapsableTableViewHeaderViewPlain_iOS7.xib; sourceTree = "<group>"; };
+		18BBAF5018A30DE000B0F2C4 /* plaintableheader.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plaintableheader.png; sourceTree = "<group>"; };
+		18BBAF5E18A3E6EA00B0F2C4 /* BillValueTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BillValueTableCell.h; sourceTree = "<group>"; };
+		18BBAF5F18A3E6EA00B0F2C4 /* BillValueTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BillValueTableCell.m; sourceTree = "<group>"; };
+		18BBAF6118A3FD6100B0F2C4 /* BillSolver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BillSolver.h; sourceTree = "<group>"; };
+		18BBAF6218A3FD6100B0F2C4 /* BillSolver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BillSolver.m; sourceTree = "<group>"; };
+		18BBAF6418A440E100B0F2C4 /* OrdersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrdersViewController.h; sourceTree = "<group>"; };
+		18BBAF6518A440E100B0F2C4 /* OrdersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrdersViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1895E06B189F475500E7C661 /* MultipeerConnectivity.framework in Frameworks */,
 				1895E038189F46C300E7C661 /* CoreGraphics.framework in Frameworks */,
 				1895E03A189F46C300E7C661 /* UIKit.framework in Frameworks */,
 				1895E036189F46C300E7C661 /* Foundation.framework in Frameworks */,
@@ -101,6 +145,7 @@
 		1895E034189F46C300E7C661 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1895E06A189F475500E7C661 /* MultipeerConnectivity.framework */,
 				1895E035189F46C300E7C661 /* Foundation.framework */,
 				1895E037189F46C300E7C661 /* CoreGraphics.framework */,
 				1895E039189F46C300E7C661 /* UIKit.framework */,
@@ -112,11 +157,18 @@
 		1895E03B189F46C300E7C661 /* BillSplit */ = {
 			isa = PBXGroup;
 			children = (
+				18BBAF3C18A30DE000B0F2C4 /* CollapsableTableView */,
 				1895E044189F46C300E7C661 /* AppDelegate.h */,
 				1895E045189F46C300E7C661 /* AppDelegate.m */,
 				1895E047189F46C300E7C661 /* Main.storyboard */,
+				18BBAF5E18A3E6EA00B0F2C4 /* BillValueTableCell.h */,
+				18BBAF5F18A3E6EA00B0F2C4 /* BillValueTableCell.m */,
 				1895E04A189F46C300E7C661 /* ViewController.h */,
 				1895E04B189F46C300E7C661 /* ViewController.m */,
+				18BBAF6418A440E100B0F2C4 /* OrdersViewController.h */,
+				18BBAF6518A440E100B0F2C4 /* OrdersViewController.m */,
+				18BBAF6118A3FD6100B0F2C4 /* BillSolver.h */,
+				18BBAF6218A3FD6100B0F2C4 /* BillSolver.m */,
 				1895E04D189F46C400E7C661 /* Images.xcassets */,
 				1895E03C189F46C300E7C661 /* Supporting Files */,
 			);
@@ -150,6 +202,40 @@
 				1895E05D189F46C400E7C661 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		18BBAF3C18A30DE000B0F2C4 /* CollapsableTableView */ = {
+			isa = PBXGroup;
+			children = (
+				18BBAF3D18A30DE000B0F2C4 /* Classes */,
+				18BBAF4818A30DE000B0F2C4 /* CollapsableTableViewFooterViewGrouped.xib */,
+				18BBAF4918A30DE000B0F2C4 /* CollapsableTableViewFooterViewGrouped_iOS7.xib */,
+				18BBAF4A18A30DE000B0F2C4 /* CollapsableTableViewFooterViewPlain.xib */,
+				18BBAF4B18A30DE000B0F2C4 /* CollapsableTableViewFooterViewPlain_iOS7.xib */,
+				18BBAF4C18A30DE000B0F2C4 /* CollapsableTableViewHeaderViewGrouped.xib */,
+				18BBAF4D18A30DE000B0F2C4 /* CollapsableTableViewHeaderViewGrouped_iOS7.xib */,
+				18BBAF4E18A30DE000B0F2C4 /* CollapsableTableViewHeaderViewPlain.xib */,
+				18BBAF4F18A30DE000B0F2C4 /* CollapsableTableViewHeaderViewPlain_iOS7.xib */,
+				18BBAF5018A30DE000B0F2C4 /* plaintableheader.png */,
+			);
+			path = CollapsableTableView;
+			sourceTree = "<group>";
+		};
+		18BBAF3D18A30DE000B0F2C4 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				18BBAF3E18A30DE000B0F2C4 /* CollapsableTableView.h */,
+				18BBAF3F18A30DE000B0F2C4 /* CollapsableTableView.m */,
+				18BBAF4018A30DE000B0F2C4 /* CollapsableTableViewDelegate.h */,
+				18BBAF4118A30DE000B0F2C4 /* CollapsableTableViewFooterViewController.h */,
+				18BBAF4218A30DE000B0F2C4 /* CollapsableTableViewFooterViewController.m */,
+				18BBAF4318A30DE000B0F2C4 /* CollapsableTableViewHeaderViewController.h */,
+				18BBAF4418A30DE000B0F2C4 /* CollapsableTableViewHeaderViewController.m */,
+				18BBAF4518A30DE000B0F2C4 /* CollapsableTableViewTapRecognizer.h */,
+				18BBAF4618A30DE000B0F2C4 /* CollapsableTableViewTapRecognizer.m */,
+				18BBAF4718A30DE000B0F2C4 /* TapDelegate.h */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -199,6 +285,9 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = "Yujin Ariza";
 				TargetAttributes = {
+					1895E031189F46C300E7C661 = {
+						DevelopmentTeam = Q2DXF9E57L;
+					};
 					1895E052189F46C400E7C661 = {
 						TestTargetID = 1895E031189F46C300E7C661;
 					};
@@ -228,9 +317,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18BBAF5618A30DE000B0F2C4 /* CollapsableTableViewFooterViewGrouped_iOS7.xib in Resources */,
+				18BBAF5918A30DE000B0F2C4 /* CollapsableTableViewHeaderViewGrouped.xib in Resources */,
+				18BBAF5A18A30DE000B0F2C4 /* CollapsableTableViewHeaderViewGrouped_iOS7.xib in Resources */,
 				1895E04E189F46C400E7C661 /* Images.xcassets in Resources */,
+				18BBAF5D18A30DE000B0F2C4 /* plaintableheader.png in Resources */,
 				1895E040189F46C300E7C661 /* InfoPlist.strings in Resources */,
+				18BBAF5B18A30DE000B0F2C4 /* CollapsableTableViewHeaderViewPlain.xib in Resources */,
+				18BBAF5718A30DE000B0F2C4 /* CollapsableTableViewFooterViewPlain.xib in Resources */,
+				18BBAF5818A30DE000B0F2C4 /* CollapsableTableViewFooterViewPlain_iOS7.xib in Resources */,
 				1895E049189F46C300E7C661 /* Main.storyboard in Resources */,
+				18BBAF5C18A30DE000B0F2C4 /* CollapsableTableViewHeaderViewPlain_iOS7.xib in Resources */,
+				18BBAF5518A30DE000B0F2C4 /* CollapsableTableViewFooterViewGrouped.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -251,7 +349,14 @@
 			files = (
 				1895E04C189F46C300E7C661 /* ViewController.m in Sources */,
 				1895E046189F46C300E7C661 /* AppDelegate.m in Sources */,
+				18BBAF5218A30DE000B0F2C4 /* CollapsableTableViewFooterViewController.m in Sources */,
+				18BBAF5418A30DE000B0F2C4 /* CollapsableTableViewTapRecognizer.m in Sources */,
+				18BBAF6318A3FD6100B0F2C4 /* BillSolver.m in Sources */,
+				18BBAF5118A30DE000B0F2C4 /* CollapsableTableView.m in Sources */,
+				18BBAF5318A30DE000B0F2C4 /* CollapsableTableViewHeaderViewController.m in Sources */,
+				18BBAF6618A440E100B0F2C4 /* OrdersViewController.m in Sources */,
 				1895E042189F46C300E7C661 /* main.m in Sources */,
+				18BBAF6018A3E6EA00B0F2C4 /* BillValueTableCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,10 +483,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BillSplit/BillSplit-Prefix.pch";
 				INFOPLIST_FILE = "BillSplit/BillSplit-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -391,10 +499,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BillSplit/BillSplit-Prefix.pch";
 				INFOPLIST_FILE = "BillSplit/BillSplit-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -460,6 +571,7 @@
 				1895E066189F46C400E7C661 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1895E067189F46C400E7C661 /* Build configuration list for PBXNativeTarget "BillSplitTests" */ = {
 			isa = XCConfigurationList;
@@ -468,6 +580,7 @@
 				1895E069189F46C400E7C661 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
