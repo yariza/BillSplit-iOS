@@ -1,14 +1,14 @@
 //
-//  BillValueTableCell.m
+//  OrderTableCell.m
 //  BillSplit
 //
-//  Created by Yujin Ariza on 2/6/14.
+//  Created by Yujin Ariza on 2/7/14.
 //  Copyright (c) 2014 Yujin Ariza. All rights reserved.
 //
 
-#import "BillValueTableCell.h"
+#import "OrderTableCell.h"
 
-@implementation BillValueTableCell
+@implementation OrderTableCell
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
@@ -25,17 +25,5 @@
 
     // Configure the view for the selected state
 }
-- (IBAction)numFieldChanged:(id)sender {
-    if ([self.numField.text isEqualToString:@""])
-        self.numField.text = @"0";
-    self.stepper.value = [self.numField.text doubleValue];
-}
-
-- (IBAction)valueChanged:(id)sender {
-    self.numField.text =
-    [NSString stringWithFormat:@"%i", (int)self.stepper.value];
-}
-
-
 
 @end

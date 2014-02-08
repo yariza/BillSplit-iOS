@@ -8,6 +8,9 @@
 
 #import "ViewController.h"
 
-@interface OrdersViewController : ViewController
+@interface OrdersViewController : ViewController <UITableViewDelegate, UITableViewDataSource, CollapsableTableViewDelegate>
 
+@property (weak, nonatomic) IBOutlet CollapsableTableView *table;
+
+-(void) addOrder:(NSString*)name price:(NSDecimalNumber*)price owner:(NSString*)ownerID;
 @end

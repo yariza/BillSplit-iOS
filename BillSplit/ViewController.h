@@ -10,5 +10,6 @@
 #import "CollapsableTableViewDelegate.h"
 
 @interface ViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, CollapsableTableViewDelegate>
+@property (weak, nonatomic) IBOutlet CollapsableTableView *table;
 
 @end

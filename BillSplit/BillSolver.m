@@ -56,6 +56,35 @@
 
 @implementation Order
 
+-(NSString*) description
+{
+    return [NSString stringWithFormat:@"%@: %@ %@",
+            self.name, self.owner, self.price ];
+}
+
++(BOOL) supportsSecureCoding
+{
+    return YES;
+}
+
+-(id) initWithCoder:(NSCoder *)decoder
+{
+    self = [super init];
+    if (!self)
+        return nil;
+    
+    self.name = [decoder decodeObjectOfClass:[NSString class] forKey:@"name"];
+    self.owner = [decoder decodeObjectOfClass:[NSString class] forKey:@"owner"];
+    self.price = [decoder decodeObjectOfClass:[NSDecimalNumber class] forKey:@"price"];
+    return self;
+}
+
+-(void) encodeWithCoder:(NSCoder *)encoder
+{
+    [encoder encodeObject:self.name forKey:@"name"];
+    [encoder encodeObject:self.owner forKey:@"owner"];
+    [encoder encodeObject:self.price forKey:@"price"];
+}
 
 @end
 

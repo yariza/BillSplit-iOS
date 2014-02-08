@@ -27,8 +27,9 @@
 
 @end
 
-@interface Order : NSObject
+@interface Order : NSObject <NSSecureCoding>
 
+@property NSString* name;
 @property NSString* owner;
 @property NSDecimalNumber* price;
 

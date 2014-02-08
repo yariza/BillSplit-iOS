@@ -38,6 +38,12 @@
 		18BBAF6018A3E6EA00B0F2C4 /* BillValueTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BBAF5F18A3E6EA00B0F2C4 /* BillValueTableCell.m */; };
 		18BBAF6318A3FD6100B0F2C4 /* BillSolver.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BBAF6218A3FD6100B0F2C4 /* BillSolver.m */; };
 		18BBAF6618A440E100B0F2C4 /* OrdersViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BBAF6518A440E100B0F2C4 /* OrdersViewController.m */; };
+		18BBAF6B18A57C9F00B0F2C4 /* BSNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BBAF6A18A57C9F00B0F2C4 /* BSNetworking.m */; };
+		18BBAF6E18A5B62500B0F2C4 /* OrderTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BBAF6D18A5B62500B0F2C4 /* OrderTableCell.m */; };
+		18BBAF7118A5B86F00B0F2C4 /* TaxTipTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BBAF7018A5B86F00B0F2C4 /* TaxTipTableCell.m */; };
+		18BBAF7618A5C83D00B0F2C4 /* AddOrderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BBAF7518A5C83D00B0F2C4 /* AddOrderViewController.m */; };
+		18BBAF7918A5EC0A00B0F2C4 /* NSMutableArray+QueueAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BBAF7818A5EC0A00B0F2C4 /* NSMutableArray+QueueAdditions.m */; };
+		18BBAF7C18A6069F00B0F2C4 /* ResultsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 18BBAF7B18A6069F00B0F2C4 /* ResultsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,6 +102,18 @@
 		18BBAF6218A3FD6100B0F2C4 /* BillSolver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BillSolver.m; sourceTree = "<group>"; };
 		18BBAF6418A440E100B0F2C4 /* OrdersViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrdersViewController.h; sourceTree = "<group>"; };
 		18BBAF6518A440E100B0F2C4 /* OrdersViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrdersViewController.m; sourceTree = "<group>"; };
+		18BBAF6918A57C9F00B0F2C4 /* BSNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BSNetworking.h; sourceTree = "<group>"; };
+		18BBAF6A18A57C9F00B0F2C4 /* BSNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BSNetworking.m; sourceTree = "<group>"; };
+		18BBAF6C18A5B62500B0F2C4 /* OrderTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrderTableCell.h; sourceTree = "<group>"; };
+		18BBAF6D18A5B62500B0F2C4 /* OrderTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrderTableCell.m; sourceTree = "<group>"; };
+		18BBAF6F18A5B86F00B0F2C4 /* TaxTipTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TaxTipTableCell.h; sourceTree = "<group>"; };
+		18BBAF7018A5B86F00B0F2C4 /* TaxTipTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TaxTipTableCell.m; sourceTree = "<group>"; };
+		18BBAF7418A5C83D00B0F2C4 /* AddOrderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddOrderViewController.h; sourceTree = "<group>"; };
+		18BBAF7518A5C83D00B0F2C4 /* AddOrderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddOrderViewController.m; sourceTree = "<group>"; };
+		18BBAF7718A5EC0A00B0F2C4 /* NSMutableArray+QueueAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSMutableArray+QueueAdditions.h"; sourceTree = "<group>"; };
+		18BBAF7818A5EC0A00B0F2C4 /* NSMutableArray+QueueAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSMutableArray+QueueAdditions.m"; sourceTree = "<group>"; };
+		18BBAF7A18A6069F00B0F2C4 /* ResultsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultsViewController.h; sourceTree = "<group>"; };
+		18BBAF7B18A6069F00B0F2C4 /* ResultsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,12 +180,12 @@
 				1895E044189F46C300E7C661 /* AppDelegate.h */,
 				1895E045189F46C300E7C661 /* AppDelegate.m */,
 				1895E047189F46C300E7C661 /* Main.storyboard */,
-				18BBAF5E18A3E6EA00B0F2C4 /* BillValueTableCell.h */,
-				18BBAF5F18A3E6EA00B0F2C4 /* BillValueTableCell.m */,
-				1895E04A189F46C300E7C661 /* ViewController.h */,
-				1895E04B189F46C300E7C661 /* ViewController.m */,
-				18BBAF6418A440E100B0F2C4 /* OrdersViewController.h */,
-				18BBAF6518A440E100B0F2C4 /* OrdersViewController.m */,
+				18BBAF7218A5C7FD00B0F2C4 /* TableCell */,
+				18BBAF7318A5C80B00B0F2C4 /* ViewController */,
+				18BBAF6918A57C9F00B0F2C4 /* BSNetworking.h */,
+				18BBAF6A18A57C9F00B0F2C4 /* BSNetworking.m */,
+				18BBAF7718A5EC0A00B0F2C4 /* NSMutableArray+QueueAdditions.h */,
+				18BBAF7818A5EC0A00B0F2C4 /* NSMutableArray+QueueAdditions.m */,
 				18BBAF6118A3FD6100B0F2C4 /* BillSolver.h */,
 				18BBAF6218A3FD6100B0F2C4 /* BillSolver.m */,
 				1895E04D189F46C400E7C661 /* Images.xcassets */,
@@ -253,6 +271,34 @@
 			);
 			name = Resources;
 			path = BillSplit/CollapsableTableView;
+			sourceTree = "<group>";
+		};
+		18BBAF7218A5C7FD00B0F2C4 /* TableCell */ = {
+			isa = PBXGroup;
+			children = (
+				18BBAF5E18A3E6EA00B0F2C4 /* BillValueTableCell.h */,
+				18BBAF5F18A3E6EA00B0F2C4 /* BillValueTableCell.m */,
+				18BBAF6C18A5B62500B0F2C4 /* OrderTableCell.h */,
+				18BBAF6D18A5B62500B0F2C4 /* OrderTableCell.m */,
+				18BBAF6F18A5B86F00B0F2C4 /* TaxTipTableCell.h */,
+				18BBAF7018A5B86F00B0F2C4 /* TaxTipTableCell.m */,
+			);
+			name = TableCell;
+			sourceTree = "<group>";
+		};
+		18BBAF7318A5C80B00B0F2C4 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				1895E04A189F46C300E7C661 /* ViewController.h */,
+				1895E04B189F46C300E7C661 /* ViewController.m */,
+				18BBAF6418A440E100B0F2C4 /* OrdersViewController.h */,
+				18BBAF6518A440E100B0F2C4 /* OrdersViewController.m */,
+				18BBAF7418A5C83D00B0F2C4 /* AddOrderViewController.h */,
+				18BBAF7518A5C83D00B0F2C4 /* AddOrderViewController.m */,
+				18BBAF7A18A6069F00B0F2C4 /* ResultsViewController.h */,
+				18BBAF7B18A6069F00B0F2C4 /* ResultsViewController.m */,
+			);
+			name = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -365,10 +411,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				1895E04C189F46C300E7C661 /* ViewController.m in Sources */,
+				18BBAF7918A5EC0A00B0F2C4 /* NSMutableArray+QueueAdditions.m in Sources */,
 				1895E046189F46C300E7C661 /* AppDelegate.m in Sources */,
+				18BBAF7C18A6069F00B0F2C4 /* ResultsViewController.m in Sources */,
+				18BBAF6B18A57C9F00B0F2C4 /* BSNetworking.m in Sources */,
+				18BBAF6E18A5B62500B0F2C4 /* OrderTableCell.m in Sources */,
 				18BBAF5218A30DE000B0F2C4 /* CollapsableTableViewFooterViewController.m in Sources */,
 				18BBAF5418A30DE000B0F2C4 /* CollapsableTableViewTapRecognizer.m in Sources */,
 				18BBAF6318A3FD6100B0F2C4 /* BillSolver.m in Sources */,
+				18BBAF7618A5C83D00B0F2C4 /* AddOrderViewController.m in Sources */,
+				18BBAF7118A5B86F00B0F2C4 /* TaxTipTableCell.m in Sources */,
 				18BBAF5118A30DE000B0F2C4 /* CollapsableTableView.m in Sources */,
 				18BBAF5318A30DE000B0F2C4 /* CollapsableTableViewHeaderViewController.m in Sources */,
 				18BBAF6618A440E100B0F2C4 /* OrdersViewController.m in Sources */,
