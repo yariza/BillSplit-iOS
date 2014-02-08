@@ -12,7 +12,7 @@
 
 -(NSString*) description
 {
-    return [NSString stringWithFormat:@"%@ %i x $%i => %@",
+    return [NSString stringWithFormat:@"%@: %i x $%i => %@",
             self.orig, [self.count intValue], [self.bill intValue], self.dest];
 }
 
@@ -403,6 +403,14 @@
     return min;
 }
 
+-(NSDecimalNumber*) getPlayerContribution:(NSString*)name
+{
+    Player* player = [self findPlayerByName:name];
+    NSDecimalNumber* initial = [self walletTotal:player.walletInitial];
+    NSDecimalNumber* final = [self walletTotal:player.walletFinal];
+    return [initial decimalNumberBySubtracting:final];
+}
+
 -(Player*) findPlayerByName:(NSString*)name
 {
     for (Player* player in players) {
@@ -410,6 +418,12 @@
             return player;
     }
     return [players objectAtIndex:0];
+}
+
+-(NSDecimalNumber*) totalBill
+{
+    Player* tab = players[0];
+    return [self walletTotal:tab.walletFinal];
 }
 
 -(NSDecimalNumber*) walletTotal:(NSArray*) arr

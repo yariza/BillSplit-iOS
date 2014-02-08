@@ -260,7 +260,7 @@
                                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                     </state>
                                                     <connections>
-                                                        <segue destination="M7u-T5-TjT" kind="push" id="NLC-G3-hFW"/>
+                                                        <segue destination="M7u-T5-TjT" kind="push" identifier="goToResultsSegue" id="NLC-G3-hFW"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -332,19 +332,19 @@
         <scene sceneID="qPa-kT-UFj">
             <objects>
                 <tableViewController id="M7u-T5-TjT" customClass="ResultsViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="8K3-Ys-9G4" customClass="CollapsableTableView">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="8K3-Ys-9G4" customClass="CollapsableTableView">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="transaction" textLabel="hU1-cf-elk" style="IBUITableViewCellStyleDefault" id="KSM-SM-Dol">
-                                <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="hU1-cf-elk" style="IBUITableViewCellStyleDefault" id="KSM-SM-Dol">
+                                <rect key="frame" x="0.0" y="119" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KSM-SM-Dol" id="ryg-ZU-uql">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hU1-cf-elk">
+                                        <label opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="left" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.30000000000000004" adjustsLetterSpacingToFitWidth="YES" id="hU1-cf-elk">
                                             <rect key="frame" x="15" y="0.0" width="290" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
@@ -374,6 +374,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <sections>
                             <tableViewSection id="X6m-NE-U0d">
                                 <cells>
@@ -406,7 +407,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="0" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P4e-TL-CC6">
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="0" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="P4e-TL-CC6">
                                                     <rect key="frame" x="203" y="7" width="97" height="30"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -457,6 +458,7 @@
                         <connections>
                             <outlet property="dataSource" destination="Mqe-Ed-a44" id="0ab-iW-ljq"/>
                             <outlet property="delegate" destination="Mqe-Ed-a44" id="RZR-qk-rC3"/>
+                            <outletCollection property="gestureRecognizers" destination="2Pa-WE-zoQ" appends="YES" id="S6W-Ly-3AE"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="MxI-oz-jt8">
@@ -478,6 +480,11 @@
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tfj-VS-qNE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="2Pa-WE-zoQ">
+                    <connections>
+                        <action selector="tap:" destination="Mqe-Ed-a44" id="FbD-OT-wWi"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1528" y="-753"/>
         </scene>

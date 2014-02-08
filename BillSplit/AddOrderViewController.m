@@ -20,6 +20,9 @@
     NSMutableArray* payers;
     NSString* owner;
 }
+- (IBAction)tap:(id)sender {
+    [self.view endEditing:NO];
+}
 
 - (void)viewDidLoad
 {

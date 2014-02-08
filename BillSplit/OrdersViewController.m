@@ -14,6 +14,7 @@
 #import "BillSolver.h"
 #import "AddOrderViewController.h"
 #import "CollapsableTableView.h"
+#import "ResultsViewController.h"
 
 
 @interface OrdersViewController ()<MCSessionDelegate>
@@ -198,6 +199,24 @@
 - (IBAction) unwindToOrders:(UIStoryboardSegue*)unwindSegue
 {
     
+}
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    
+    if ([segue.identifier isEqualToString:@"goToResultsSegue"]) {
+//        ResultsViewController* dest = [segue destinationViewController];
+        //todo: say i'm host if there isn't a host yet
+        [solver addPlayer:networking.myPeerID.displayName wallet:networking.myWallet];
+        for (MCPeerID* peer in networking.session.connectedPeers) {
+            [solver addPlayer:peer.displayName wallet:[networking.wallets objectForKey:peer.displayName]];
+        }
+        
+        for (Order* order in orders) {
+            [solver addOrder:order.owner price:order.price];
+        }
+        [solver distribute];
+    }
 }
 
 #pragma mark -

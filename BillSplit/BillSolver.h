@@ -50,6 +50,9 @@
 
 +(BillSolver*) sharedBillSolver;
 
+-(NSDecimalNumber*) totalBill;
+-(NSDecimalNumber*) getPlayerContribution:(NSString*)name;
+
 -(void) addPlayer:(NSString*) myName wallet:(NSArray*) myWallet;
 -(void) addOrder:(NSString*) owner price:(NSDecimalNumber*) price;
 
